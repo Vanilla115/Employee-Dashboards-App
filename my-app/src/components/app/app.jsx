@@ -53,7 +53,7 @@ class App extends Component {
             salary,
             increase: false,
             rise: false,
-            id: this.maxId++
+            id: Date.now()
         };
     
         this.setState(({ data }) => ({
@@ -106,11 +106,11 @@ class App extends Component {
         this.setState({ filter: filterType });
     };
 
-    onSalaryUpdate = (name, newSalary) => {
+    onSalaryUpdate = (id, newSalary) => {
         this.setState(({ data }) => {
             return {
                 data: data.map(item =>
-                    item.name === name ? { ...item, salary: newSalary } : item 
+                    item.id === id ? { ...item, salary: newSalary } : item 
                 )
             };
         });

@@ -20,7 +20,7 @@ class EmployeesListItem extends Component {
         const newSalary = e.target.value.replace(/\D/g, ''); // Оставляем только цифры
         this.setState({ salary: newSalary }); 
     
-        this.props.onSalaryUpdate(this.props.name, newSalary); // Передаем сразу новое значение
+        this.props.onSalaryUpdate(this.props.id, newSalary); // Передаем сразу новое значение
     };
 
     render() {
@@ -42,8 +42,8 @@ class EmployeesListItem extends Component {
                 <input 
                     type="text" 
                     className="list-group-item-input" 
-                    value={salary + '$'} // Используем value, чтобы синхронизировать
-                    onChange={this.handleSalaryChange} // Сразу обновляем при изменении
+                    value={salary + '$'} 
+                    onChange={this.handleSalaryChange} 
                 />
 
                 <div className='d-flex justify-content-center align-items-center'>
